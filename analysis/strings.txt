@@ -7,26 +7,47 @@ pcap_loop
 pcap_findalldevs
 pcap_close
 pcap_open_live
+libcrypto.so.1.1
+SHA256_Init
+SHA256_Final
+SHA256_Update
 libstdc++.so.6
+_ZNSt14basic_ifstreamIcSt11char_traitsIcEEC1ERKNSt7__cxx1112basic_stringIcS1_SaIcEEESt13_Ios_Openmode
+_ZNSirsERi
 _ZNKSt9basic_iosIcSt11char_traitsIcEEcvbEv
+_ZStlsIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_St5_Setw
 _ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE
+_ZNKSi6gcountEv
+_ZNSolsEi
 _ZNSolsEj
-_ZNSolsEm
+_ZNSaIcED1Ev
 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev
 _ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7reserveEm
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EOS4_
 _ZNSt14basic_ifstreamIcSt11char_traitsIcEEC1EPKcSt13_Ios_Openmode
+_ZNSi4readEPcl
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE6appendEPKc
+_ZSt3cin
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_
 _ZNSt8ios_base4InitD1Ev
+_ZNSt14basic_ifstreamIcSt11char_traitsIcEE7is_openEv
 _ZNSolsEPFRSoS_E
 _ZNKSt9basic_iosIcSt11char_traitsIcEEntEv
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE6appendERKS4_
 _ZSt4cerr
 _ZSt7getlineIcSt11char_traitsIcESaIcEERSt13basic_istreamIT_T0_ES7_RNSt7__cxx1112basic_stringIS4_S5_T1_EE
 __gxx_personality_v0
+_ZNSaIcEC1Ev
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE6appendEPKcm
 _ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev
 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc
 _ZNSt8ios_base4InitC1Ev
 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
 _ZSt4cout
-_ZNSi3getERc
+_ZStlsIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_St8_SetfillIS3_E
+_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_
+_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv
 _ZNSolsEPFRSt8ios_baseS0_E
 _ZNSt14basic_ifstreamIcSt11char_traitsIcEE5closeEv
 libgcc_s.so.1
@@ -34,6 +55,7 @@ _Unwind_Resume
 libc.so.6
 readdir
 closedir
+inet_ntoa
 __stack_chk_fail
 __cxa_atexit
 opendir
@@ -45,24 +67,49 @@ GLIBC_2.2.5
 CXXABI_1.3
 GLIBCXX_3.4
 GLIBCXX_3.4.21
+OPENSSL_1_1_0
 u+UH
 []A\A]A^A_
+[ERROR]
+No se pudo abrir el archivo: 
+Archivo analizado: 
+[CONTENIDO]
+Lineas leidas: 
+Lectura completada correctamente.
+[ERROR HASH]
 No se pudo abrir el archivo
-[HASH] No se pudo abrir el archivo
-[HASH SIMULADO]
+[SHA-256]
 Archivo: 
 Hash: 
-[SimulatorPIA iniciado]
+===== SimulatorPIA =====
+1. Leer archivo
+2. Generar hash
+3. Enumerar procesos
+4. Iniciar sniffer
+5. Salir
+Selecciona una opcion: 
+[LECTURA DE ARCHIVO]
 test.txt
-[ICMP detectado] Tama
+[HASH]
+[PROCESOS ACTIVOS]
+[SNIFFER]
+Saliendo del programa...
+Opcion invalida
+[ICMP DETECTADO]
+Origen: 
+Destino: 
+Tama
  bytes
 Error encontrando interfaces: 
 No se pudo abrir interfaz
 [Sniffer activo en interfaz: 
+[Sniffer finalizado]
 /proc
-[Procesos activos]
+[PROCESOS ACTIVOS]
+/proc/
+/comm
 PID: 
-No se pudo abrir /proc
+[ERROR] No se pudo abrir /proc
 :*3$"
 zPLR
 GCC: (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
@@ -74,13 +121,12 @@ f0g*
 e5l*
 ;-TC
 <-MC
-F__v
+G__v
 ;-TC
 <-MC
-F__v
-L+\?
-Ieof
-Ieof
+G__v
+Jeof
+Jeof
 _end
 `_V2
 dcin
@@ -94,41 +140,42 @@ xAX)
 ;rem
 ;rem
 udiv
-l?.)
-P__a
-P__t
-;-"!
-;-"!
-L+\?
+?|EF
+l?q)
+Q__a
+Q__t
+{@T,
 'eof
 'eof
 *_V2
-@ $e
- -[f
-J-4g
+@ ;e
+@ {f
 9cin
 %hex
 Adiv
-.<	{
 [rem
-.=	{
 [rem
 [rem
 ^div
-lm.)
-{o'h
-TrTf
-Pu.g
-v__a
-hv__b
-v__a
-hv__b
-v__a
-v__a
-lv__b
-v__a
-lv__b
-	L+\?
+/p$?!
+ [Nh
+([num
+xfY'
+?jEF
+lmq)
+o__c
+_q=g
+_r,+
+o__n
+o__a
+ho__b
+o__a
+ho__b
+o__a
+o__a
+lo__b
+o__a
+lo__b
 'eof
 'eof
 *_V2
@@ -138,9 +185,15 @@ Rrem
 Rrem
 Rrem
 Udiv
-ld.)
+x]Y'
+?aEF
+ldq)
+0	Y8
+H	)N
 `	H	
-h	G[
+h	O[
+p	?+
+t	';
 1_Tp
 2__v
 1_Tp
@@ -148,34 +201,59 @@ h	G[
 1_Tp
 1_Tp
 1_Tp
-L+\?
 9eof
 9eof
 <_V2
 Ecin
 Idiv
- 	I#
-Q	B!
-W	>!
+0	&,
+V	$[
+\	 [
 Zdiv
 3p$j
-lg.)
-Xg1i
-HiKk
-	L+\?
-'eof
-'eof
-*_V2
-3cin
-7div
-Rrem
-Rrem
-Rrem
-Udiv
-]DIR
-lf.)
-hdir
-`hent
+		Gk
+x`Y'
+?dEF
+lgq)
+}i:l
+]std
+\233
+a5'3
+7end
+7end
+f0`+
+e5e+
+_7K3
+^2?3
+N__v
+N__v
+Reof
+Reof
+iend
+j_V2
+ncin
+rdiv
+ :57*
+ ;5b)
+ <5D*
+ @58R
+ A5>R
+ xAQ*
+Arem
+Arem
+Arem
+4p$SE
+lYq)
+E__a
+E__a
+E__t
+F__s
+F__a
+Gdir
+zGent
+Gpid
+{H0r
+F__n
 /usr/include/c++/9
 /usr/include/c++/9/bits
 /usr/include/x86_64-linux-gnu/c++/9/bits
@@ -248,7 +326,9 @@ wctype.h
 /usr/include/x86_64-linux-gnu/bits/types
 /usr/include
 /usr/include/x86_64-linux-gnu/bits
+/usr/include/openssl
 ios_base.h
+iomanip
 hasher.cpp
 iostream
 cwchar
@@ -299,6 +379,7 @@ sys_errlist.h
 errno.h
 wctype-wchar.h
 wctype.h
+sha.h
 /usr/include/c++/9
 /usr/include/c++/9/bits
 /usr/include/x86_64-linux-gnu/c++/9/bits
@@ -420,8 +501,8 @@ errno.h
 wctype-wchar.h
 wctype.h
 ip.h
-/usr/include/c++/9
 /usr/include/c++/9/bits
+/usr/include/c++/9
 /usr/include/x86_64-linux-gnu/c++/9/bits
 /usr/include/c++/9/debug
 /usr/include/c++/9/ext
@@ -429,28 +510,39 @@ ip.h
 /usr/include/x86_64-linux-gnu/bits/types
 /usr/include
 /usr/include/x86_64-linux-gnu/bits
+char_traits.h
 process_enum.cpp
+basic_string.tcc
+basic_string.h
+move.h
 iostream
 cwchar
 exception_ptr.h
-type_traits
 c++config.h
+type_traits
 cpp_type_traits.h
 stl_pair.h
+stl_iterator_base_types.h
 debug.h
-char_traits.h
 cstdint
 clocale
+allocator.h
 cstdlib
 cstdio
-basic_string.h
+alloc_traits.h
+initializer_list
+stringfwd.h
 system_error
 ios_base.h
 cwctype
 iosfwd
+stl_iterator_base_funcs.h
 predefined_ops.h
 new_allocator.h
 numeric_traits.h
+alloc_traits.h
+stl_iterator.h
+type_traits.h
 stddef.h
 <built-in>
 wint_t.h
@@ -690,6 +782,7 @@ new_allocator<char>
 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEaSEPKc
 operator std::integral_constant<bool, false>::value_type
 _ZNSt11char_traitsIwE7compareEPKwS2_m
+/mnt/hgfs/COMPARTIDA/PIA-Ciberseguridad_backup3/PIA-Ciberseguridad
 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4swapERS4_
 _ZNSaIcED2Ev
 gp_offset
@@ -854,6 +947,7 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE5clearEv
 find_last_not_of
 __initialize_p
 _ZN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC4ERKS1_
+lineCount
 __uint32_t
 _sys_nerr
 _ZN9__gnu_cxx13new_allocatorIcE10deallocateEPcm
@@ -976,7 +1070,6 @@ tm_mday
 find_first_of
 __wchb
 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE6insertEmRKS4_mm
-size_type
 bsearch
 _ZNK9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEplEl
 _ZNKSt17integral_constantIbLb1EEclEv
@@ -1049,7 +1142,6 @@ _IO_backup_base
 setlocale
 _shortbuf
 _S_select_on_copy
-/mnt/hgfs/COMPARTIDA/PIA-Ciberseguridad/PIA-Ciberseguridad
 readFile
 __isoc99_vswscanf
 wint_t
@@ -1229,17 +1321,23 @@ _ZStorSt13_Ios_FmtflagsS_
 asctime
 _S_ios_fmtflags_min
 _S_internal
+_Setfill<char>
 _S_boolalpha
 difftime
 _ZNSt17integral_constantImLm0EE5valueE
 src/hasher.cpp
 _S_basefield
 _S_right
+_ZSt4setwi
+_ZSt7setfillIcESt8_SetfillIT_ES1_
 operator&
 _S_hex
 localtime
+buffer
 operator|
 _S_fixed
+md_len
+operator&=
 _S_showbase
 operator std::integral_constant<long unsigned int, 0>::value_type
 _Swallow_assign
@@ -1260,11 +1358,14 @@ mktime
 _S_ios_fmtflags_end
 __clock_t
 _S_oct
-operator&=
+SHA256state_st
 __fmtfl
 setf
+setw
 _ZStoRRSt13_Ios_FmtflagsS_
 _S_unitbuf
+_M_c
+hash
 _ZNSt8ios_base4setfESt13_Ios_FmtflagsS0_
 ignore
 _ZStcoSt13_Ios_Fmtflags
@@ -1273,18 +1374,23 @@ __old
 _S_floatfield
 _GLOBAL__sub_I__Z12generateHashPKc
 generateHash
+sha256
 integral_constant<long unsigned int, 0>
 _ZNKSt17integral_constantImLm0EEcvmEv
 _S_showpos
 allocator_arg_t
 allocator_arg
 gmtime
+_M_n
+setfill<char>
 fmtflags
 __time_t
 _ZNKSt17integral_constantImLm0EEclEv
-hash
+SHA256_CTX
 _S_scientific
+_Setw
 _GLOBAL__sub_I_main
+option
 src/main.cpp
 pcap_if
 IPPROTO_EGP
@@ -1368,17 +1474,65 @@ tv_sec
 in6addr_any
 __in6_u
 IPPROTO_AH
-listProcesses
-src/process_enum.cpp
+_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_
+path
+_ZSt10__distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag
+__lhs
+__last
+remove_reference<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&>
+_Type
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_M_construct_auxIPKcEEvT_S8_St12__false_type
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag
+__distance<char const*>
+input_iterator_tag
+__ptr
+__rhs
 d_name
-d_reclen
-d_off
-d_type
+_ZSt4moveIRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEONSt16remove_referenceIT_E4typeEOS8_
+_ZSt8distanceIPKcENSt15iterator_traitsIT_E15difference_typeES3_S3_
+__iterator_category<char const*>
+iterator_category
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2EOS4_
+processFile
+move<std::__cxx11::basic_string<char>&>
+_M_construct<char const*>
 __dirstream
-dirent
-_GLOBAL__sub_I__Z13listProcessesv
+_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_PKS5_
+__is_null_pointer<char const>
+_ZN9__gnu_cxx17__is_null_pointerIKcEEbPT_
+_Iter
 __ino_t
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_Alloc_hiderC2EPcRKS3_
+_InputIterator
+__dnew
+__string_type
+__end
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2EPKcRKS3_
+_FwdIterator
+dirent
+_RandomAccessIterator
+operator+<char, std::char_traits<char>, std::allocator<char> >
+__first
+_GLOBAL__sub_I__Z13listProcessesv
+d_off
+listProcesses
+_S_local_capacity
+processName
+bidirectional_iterator_tag
+d_type
+_M_construct_aux<char const*>
+src/process_enum.cpp
+d_reclen
+__str
 d_ino
+_ZSt19__iterator_categoryIPKcENSt15iterator_traitsIT_E17iterator_categoryERKS3_
+__beg
+_InIterator
+__len
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_
+__size_type
+__s1
+__s2
 crtstuff.c
 deregister_tm_clones
 __do_global_dtors_aux
@@ -1407,11 +1561,13 @@ _DYNAMIC
 __init_array_end
 __init_array_start
 _GLOBAL_OFFSET_TABLE_
+SHA256_Final@@OPENSSL_1_1_0
 pcap_loop
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE6appendEPKcm@@GLIBCXX_3.4.21
 _ZSt7getlineIcSt11char_traitsIcESaIcEERSt13basic_istreamIT_T0_ES7_RNSt7__cxx1112basic_stringIS4_S5_T1_EE@@GLIBCXX_3.4.21
 pcap_findalldevs
 _ZNSt14basic_ifstreamIcSt11char_traitsIcEE5closeEv@@GLIBCXX_3.4
-_ZNSolsEm@@GLIBCXX_3.4
+_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_PKS5_
 _edata
 _ZNSt14basic_ifstreamIcSt11char_traitsIcEED1Ev@@GLIBCXX_3.4
 _ZStaNRSt13_Ios_FmtflagsS_
@@ -1419,46 +1575,70 @@ _ZNSolsEPFRSt8ios_baseS0_E@@GLIBCXX_3.4
 _IO_stdin_used
 pcap_open_live
 __cxa_finalize@@GLIBC_2.2.5
+inet_ntoa@@GLIBC_2.2.5
 _ZNKSt9basic_iosIcSt11char_traitsIcEEntEv@@GLIBCXX_3.4
 _ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@@GLIBCXX_3.4
 __dso_handle
 _ZStoRRSt13_Ios_FmtflagsS_
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EOS4_@@GLIBCXX_3.4.21
+_ZNSirsERi@@GLIBCXX_3.4
 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@@GLIBCXX_3.4.21
 _ZStcoSt13_Ios_Fmtflags
 _Z12startSnifferv
 DW.ref.__gxx_personality_v0
+_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv@@GLIBCXX_3.4.21
 __cxa_atexit@@GLIBC_2.2.5
 _ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE@@GLIBCXX_3.4.21
+_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_
+_ZSt4moveIRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEONSt16remove_referenceIT_E4typeEOS8_
 _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@@GLIBCXX_3.4
 _ZNSolsEPFRSoS_E@@GLIBCXX_3.4
+_ZNSaIcED1Ev@@GLIBCXX_3.4
 __stack_chk_fail@@GLIBC_2.4
 __TMC_END__
+_ZStlsIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_St5_Setw@@GLIBCXX_3.4
+_ZSt7setfillIcESt8_SetfillIT_ES1_
 _ZNKSt9basic_iosIcSt11char_traitsIcEEcvbEv@@GLIBCXX_3.4.21
+_ZNSi4readEPcl@@GLIBCXX_3.4
 _ZStanSt13_Ios_FmtflagsS_
 _ZSt4cout@@GLIBCXX_3.4
 _ZNSolsEj@@GLIBCXX_3.4
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1EPKcRKS3_@@GLIBCXX_3.4.21
 __data_start
-_ZNSi3getERc@@GLIBCXX_3.4
 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev@@GLIBCXX_3.4.21
 pcap_close
+SHA256_Update@@OPENSSL_1_1_0
 opendir@@GLIBC_2.2.5
 __bss_start
 readdir@@GLIBC_2.2.5
 _ZNSt8ios_base4InitC1Ev@@GLIBCXX_3.4
 __libc_csu_init
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7reserveEm@@GLIBCXX_3.4.21
+_ZStlsIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_St8_SetfillIS3_E@@GLIBCXX_3.4
+_ZNSt14basic_ifstreamIcSt11char_traitsIcEE7is_openEv@@GLIBCXX_3.4
 closedir@@GLIBC_2.2.5
 _ZNSt8ios_base4setfESt13_Ios_FmtflagsS0_
+_ZNSt14basic_ifstreamIcSt11char_traitsIcEEC1ERKNSt7__cxx1112basic_stringIcS1_SaIcEEESt13_Ios_Openmode@@GLIBCXX_3.4.21
 __gxx_personality_v0@@CXXABI_1.3
+SHA256_Init@@OPENSSL_1_1_0
+_ZNSolsEi@@GLIBCXX_3.4
 _ITM_deregisterTMCloneTable
 _Unwind_Resume@@GCC_3.0
+_ZNSaIcEC1Ev@@GLIBCXX_3.4
 _ZStorSt13_Ios_FmtflagsS_
 __libc_csu_fini
+_ZSt3cin@@GLIBCXX_3.4
 _ZNSt14basic_ifstreamIcSt11char_traitsIcEEC1EPKcSt13_Ios_Openmode@@GLIBCXX_3.4
 __libc_start_main@@GLIBC_2.2.5
+_ZNSt11char_traitsIcE6lengthEPKc
 __gmon_start__
 _ITM_registerTMCloneTable
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE6appendEPKc@@GLIBCXX_3.4.21
 _ZSt3hexRSt8ios_base
 _ZSt4cerr@@GLIBCXX_3.4
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE6appendERKS4_@@GLIBCXX_3.4.21
+_ZSt4setwi
+_ZNKSi6gcountEv@@GLIBCXX_3.4
 _ZNSt8ios_base4InitD1Ev@@GLIBCXX_3.4
 .symtab
 .strtab
