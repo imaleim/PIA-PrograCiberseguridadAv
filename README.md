@@ -2,53 +2,182 @@
 
 ## Objetivo del proyecto
 
-Desarrollar un simulador educativo en C++ que implemente técnicas básicas de análisis de comportamiento tipo malware en un entorno controlado mediante máquinas virtuales.
+SimulatorPIA es un simulador educativo desarrollado en C++ orientado al aprendizaje de técnicas básicas de análisis defensivo, monitoreo de sistemas y reversing dentro de un entorno virtual controlado.
 
-El proyecto permite observar acceso a archivos locales y captura de tráfico ICMP como base para análisis estático y dinámico en ciberseguridad.
+El proyecto permite practicar análisis estático y dinámico mediante módulos de lectura de archivos, generación de hashes SHA-256, enumeración de procesos y captura de tráfico ICMP utilizando herramientas y librerías reales de ciberseguridad.
 
-## Descripción técnica
+---
 
-SimulatorPIA es una herramienta modular desarrollada en C++ que implementa:
+# Descripción técnica
+
+SimulatorPIA implementa una arquitectura modular en C++ compuesta por varios componentes independientes:
 
 - lectura controlada de archivos locales
-- captura de tráfico de red ICMP usando libpcap
-- ejecución en entorno aislado (Ubuntu VM)
+- generación de hashes SHA-256 usando OpenSSL
+- enumeración de procesos activos en Linux mediante `/proc`
+- captura y análisis de tráfico ICMP usando libpcap
+- menú interactivo para ejecución modular
+- compilación en versiones debug y release
 
-El diseño permite integrar módulos adicionales como enumeración de procesos, generación de hashes y detección de debugging en fases posteriores del proyecto.
+El proyecto fue desarrollado y probado exclusivamente dentro de una máquina virtual Ubuntu.
 
-## Alcance y límites
+---
 
-Incluye:
+# Dependencias
 
-- simulación educativa de acceso a archivos
-- captura de paquetes ICMP en red virtual
-- arquitectura modular en C++
-- ejecución controlada dentro de máquina virtual
+El proyecto requiere:
 
-No incluye:
+- g++
+- libpcap-dev
+- libssl-dev
+- Linux Ubuntu
+- VMware Workstation / VirtualBox
 
-- persistencia en el sistema
-- comunicación con servidores externos
-- exfiltración de información
-- modificaciones al sistema anfitrión
-
-## Compilación
-
-Ejecutar dentro de la carpeta principal del proyecto:
+## Instalación de dependencias
 
 ```bash
-g++ src/*.cpp -lpcap -o SimulatorPIA
+sudo apt update
+sudo apt install g++ libpcap-dev libssl-dev -y
+```
 
-## Integrantes y responsabilidades técnicas
+---
 
-Joustin Martinez
+# Estructura del proyecto
 
-Diseño de la arquitectura inicial del proyecto, implementación del módulo file_reader e integración del sistema de compilación en entorno virtual Linux.
+```text
+SimulatorPIA/
+│
+├── src/
+├── bin/
+├── docs/
+├── analysis/
+├── evidence/
+├── README.md
+└── test.txt
+```
 
-Alendra
+---
 
-Implementación del módulo packet_sniffer mediante libpcap y validación experimental de la captura de tráfico ICMP dentro de la red virtual.
+# Compilación
 
-Santiago
+## Versión debug (con símbolos)
 
-Organización de la estructura modular del repositorio, preparación de los módulos process_enum y hasher y apoyo en pruebas de ejecución del simulador dentro de la máquina virtual.
+```bash
+g++ src/*.cpp -lpcap -lssl -lcrypto -g -o bin/SimulatorPIA_debug
+```
+
+## Versión release (sin símbolos)
+
+```bash
+g++ src/*.cpp -lpcap -lssl -lcrypto -o bin/SimulatorPIA_release
+strip bin/SimulatorPIA_release
+```
+
+---
+
+# Ejecución
+
+```bash
+sudo ./bin/SimulatorPIA_debug
+```
+
+---
+
+# Funcionalidades implementadas
+
+## Lectura de archivos
+
+Permite abrir y analizar archivos locales dentro del entorno controlado.
+
+## Generación de hashes SHA-256
+
+Utiliza OpenSSL para generar hashes SHA-256 reales y verificar integridad de archivos.
+
+## Enumeración de procesos
+
+Obtiene procesos activos del sistema Linux leyendo información desde `/proc`.
+
+## Packet sniffer ICMP
+
+Captura tráfico ICMP en tiempo real utilizando libpcap e identifica:
+
+- IP origen
+- IP destino
+- tamaño del paquete
+
+---
+
+# Alcance y límites
+
+## Incluye
+
+- simulación educativa de monitoreo del sistema
+- análisis básico de tráfico de red
+- generación de hashes criptográficos
+- reversing y análisis estático de binarios ELF
+- ejecución modular dentro de VM Ubuntu
+
+## No incluye
+
+- persistencia
+- evasión
+- comunicación remota
+- exfiltración de datos
+- modificaciones al sistema anfitrión
+- comportamiento malicioso real
+
+---
+
+# Análisis realizado
+
+El proyecto fue analizado utilizando:
+
+- strings
+- rabin2
+- análisis ELF
+- reversing básico
+- comparación debug vs release
+
+También se realizaron pruebas de tráfico ICMP y análisis dinámico dentro de la máquina virtual.
+
+---
+
+# Reporte técnico
+
+El reporte técnico final se encuentra en:
+
+```text
+docs/report_final.pdf
+```
+
+---
+
+# Evidencias y video
+
+Las capturas y evidencias del proyecto se encuentran en:
+
+```text
+evidence/
+```
+
+## Video demo
+
+```text
+[Agregar enlace del video]
+```
+
+---
+
+# Integrantes y responsabilidades técnicas
+
+## Joustin Martinez
+
+Diseño inicial de la arquitectura modular, implementación del módulo `file_reader` e integración del entorno Linux de compilación.
+
+## Alejandra Ojeda 
+
+Implementación y mejora del módulo `packet_sniffer` usando libpcap y validación experimental del tráfico ICMP dentro de la VM.
+
+## Santiago Cantu
+
+Implementación de `process_enum`, generación de hashes SHA-256, organización del análisis estático y soporte de reversing básico.
