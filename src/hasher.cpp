@@ -2,34 +2,55 @@
 
 #include <iostream>
 #include <fstream>
-#include <sstream>
 #include <iomanip>
 
-void generateHash(const char* filename) {
+#include <openssl/sha.h>
 
-    std::ifstream file(filename);
+void generateHash(const char* filename)
+{
+    std::ifstream file(filename, std::ios::binary);
 
-    if (!file) {
+    if(!file)
+    {
+        std::cout << "\n[ERROR HASH]\n";
+        std::cout << "No se pudo abrir el archivo\n";
 
-        std::cout << "\n[HASH] No se pudo abrir el archivo\n";
         return;
     }
 
-    unsigned long hash = 5381;
-    char c;
+    SHA256_CTX sha256;
+    SHA256_Init(&sha256);
 
-    while (file.get(c)) {
-        hash = ((hash << 5) + hash) + c;
+    char buffer[4096];
+
+    while(file.read(buffer, sizeof(buffer)))
+    {
+        SHA256_Update(&sha256, buffer, file.gcount());
     }
-  
-    std::cout << "\n[HASH SIMULADO]\n";
-    std::cout << "Archivo: " << filename << std::endl;
-    std::cout << "Hash: "
-              << std::hex
-              << hash
-              << std::endl;
+
+    SHA256_Update(&sha256, buffer, file.gcount());
+
+    unsigned char hash[SHA256_DIGEST_LENGTH];
+
+    SHA256_Final(hash, &sha256);
+
+    std::cout << "\n[SHA-256]\n";
+    std::cout << "Archivo: "
+              << filename
+              << "\n";
+
+    std::cout << "Hash: ";
+
+    for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)
+    {
+        std::cout
+            << std::hex
+            << std::setw(2)
+            << std::setfill('0')
+            << (int)hash[i];
+    }
+
+    std::cout << "\n";
+
+    file.close();
 }
-
-
-
-    std::cout << "\n[HASH SIMULADO]\n";
