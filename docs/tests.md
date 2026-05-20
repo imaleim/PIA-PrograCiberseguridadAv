@@ -1,23 +1,39 @@
-# Pruebas técnicas — SimulatorPIA
+# Tests – SimulatorPIA
 
-## Compilación del proyecto
+## Entorno de pruebas
 
-### Versión debug (con símbolos)
+Las pruebas fueron realizadas dentro de una máquina virtual Ubuntu utilizando privilegios sudo para permitir la captura de tráfico mediante libpcap.
 
-```bash
-g++ src/*.cpp -lpcap -g -o bin/SimulatorPIA_debug
+---
+
+# Archivo de prueba
+
+Contenido de `test.txt`:
+
+```text
+Proyecto PIA funcionando correctamente
 ```
 
-### Versión release (sin símbolos)
+---
+
+# Compilación
+
+## Compilación debug (con símbolos)
 
 ```bash
-g++ src/*.cpp -lpcap -o bin/SimulatorPIA_release
+g++ src/*.cpp -lpcap -lssl -lcrypto -g -o bin/SimulatorPIA_debug
+```
+
+## Compilación release (sin símbolos)
+
+```bash
+g++ src/*.cpp -lpcap -lssl -lcrypto -o bin/SimulatorPIA_release
 strip bin/SimulatorPIA_release
 ```
 
 ---
 
-## Ejecución del proyecto
+# Ejecución
 
 ```bash
 sudo ./bin/SimulatorPIA_debug
@@ -25,67 +41,164 @@ sudo ./bin/SimulatorPIA_debug
 
 ---
 
-## Salida observada
+# Menú principal
+
+Salida esperada:
 
 ```text
-[SimulatorPIA iniciado]
+===== SimulatorPIA =====
+
+1. Leer archivo
+2. Generar hash
+3. Enumerar procesos
+4. Iniciar sniffer
+5. Salir
+```
+
+Referencia:
+- `evidence/menu_execution.png`
+
+---
+
+# Prueba 1 – Lectura de archivo
+
+## Opción utilizada
+
+```text
+1
+```
+
+## Resultado esperado
+
+```text
+[LECTURA DE ARCHIVO]
+
+Archivo analizado: test.txt
+
+[CONTENIDO]
+
 Proyecto PIA funcionando correctamente
 
-[HASH SIMULADO]
+Lineas leidas: 1
+
+Lectura completada correctamente.
+```
+
+Referencia:
+- `evidence/file_reader_execution.png`
+
+---
+
+# Prueba 2 – Generación de hash SHA-256
+
+## Opción utilizada
+
+```text
+2
+```
+
+## Resultado esperado
+
+```text
+[SHA-256]
+
 Archivo: test.txt
-Hash: 3c5224f2ea8e2c7e
+Hash: 6cb01ba22b640af8c5c8575c0f03d13f4abb6c2e7f0a4d6a2a9db4dca8d3d5f0
+```
 
-[Procesos activos]
-PID: 1
-PID: 2
-PID: 3
-...
+Referencia:
+- `evidence/hash_execution.png`
 
-[Sniffer activo en interfaz: ens33]
-[ICMP detectado] Tamaño: 98 bytes
+---
+
+# Prueba 3 – Enumeración de procesos
+
+## Opción utilizada
+
+```text
+3
+```
+
+## Resultado esperado
+
+```text
+[PROCESOS ACTIVOS]
+
+PID: 1 | systemd
+PID: 532 | bash
+PID: 1200 | firefox
+```
+
+El resultado puede variar dependiendo de los procesos activos del sistema.
+
+Referencia:
+- `evidence/process_execution.png`
+
+---
+
+# Prueba 4 – Captura de tráfico ICMP
+
+## Opción utilizada
+
+```text
+4
+```
+
+## Generación de tráfico
+
+En otra terminal:
+
+```bash
+ping google.com
+```
+
+## Resultado esperado
+
+```text
+[ICMP DETECTADO]
+
+Origen: 192.168.x.x
+Destino: 8.8.8.8
+Tamaño: 98 bytes
+```
+
+Referencia:
+- `evidence/sniffer_execution.png`
+
+---
+
+# Pruebas de análisis estático
+
+## Strings
+
+```bash
+strings bin/SimulatorPIA_debug
+```
+
+## Imports ELF
+
+```bash
+rabin2 -i bin/SimulatorPIA_debug
+```
+
+## Secciones ELF
+
+```bash
+rabin2 -S bin/SimulatorPIA_debug
 ```
 
 ---
 
-## Análisis estático realizado
+# Resultados observados
 
-### Extracción de strings
+Durante las pruebas se verificó correctamente:
 
-```bash
-strings bin/SimulatorPIA_debug > analysis/strings.txt
-```
+- lectura de archivos locales
+- generación de hashes SHA-256 reales
+- enumeración de procesos Linux
+- captura de tráfico ICMP
+- compilación debug y release
+- funcionamiento modular del menú
+- análisis básico de reversing sobre binarios ELF
 
-### Revisión de imports
-
-```bash
-rabin2 -i bin/SimulatorPIA_debug > analysis/imports.txt
-```
-
-### Revisión de secciones ELF
-
-```bash
-rabin2 -S bin/SimulatorPIA_debug > analysis/sections.txt
-```
-
----
-
-## Resultados observados
-
-Se identificaron referencias relacionadas con:
-
-- libpcap
-- pcap_loop
-- pcap_open_live
-- secciones ELF (.text, .data, .bss)
-- símbolos debug
-
----
-
-## Referencias a evidencias
-
-Las capturas utilizadas durante las pruebas se encuentran en:
-
-- evidence/execution1.png
-- evidence/execution2.png
-- evidence/static_analysis.png
-- evidence/network_activity.png
+Las pruebas fueron ejecutadas exitosamente dentro de la máquina virtual Ubuntu.
